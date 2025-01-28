@@ -5,13 +5,16 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "cities")
-public class City {
+@Table(name = "cinemaHall")
+public class CinemaHall {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID cityId;
+    private UUID hallId;
 
     @Column(nullable = false)
-    private String cityName;
+    private String hallName;
+
+    private City city;
+
 }
