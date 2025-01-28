@@ -15,6 +15,8 @@ public class CinemaHall {
     @Column(nullable = false)
     private String hallName;
 
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "city_id")
     private City city;
 
 }

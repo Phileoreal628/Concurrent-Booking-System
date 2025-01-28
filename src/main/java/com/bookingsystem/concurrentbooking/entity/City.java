@@ -2,6 +2,7 @@ package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -14,4 +15,7 @@ public class City {
 
     @Column(nullable = false)
     private String cityName;
+
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CinemaHall> cinemaHalls;
 }
