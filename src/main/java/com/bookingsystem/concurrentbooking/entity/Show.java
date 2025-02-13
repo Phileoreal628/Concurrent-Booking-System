@@ -1,11 +1,15 @@
 package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "show")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Show {
 
     @Id

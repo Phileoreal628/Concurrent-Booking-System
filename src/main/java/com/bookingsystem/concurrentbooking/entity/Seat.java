@@ -17,4 +17,8 @@ public class Seat {
 
     @Column(nullable = false)
     private String seatType;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "hallId", nullable = false)
+    private CinemaHall cinemaHall;
 }

@@ -1,11 +1,18 @@
 package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Table(name = "bookingSeat")
+@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class BookingSeat {
 
     @Id
@@ -19,4 +26,11 @@ public class BookingSeat {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seat_id",nullable = false)
     private Seat seat;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private BookingStatus status;
+
+    @Column(nullable = false)
+    private LocalDateTime reservedAt;
 }
