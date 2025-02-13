@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class JWTUtil {
 
+
     private static final Key SECRET_KEY = Keys.hmacShaKeyFor("myConcurrentSecretKeymyConcurrentSecretKeymyConcurrentSecretKeymyConcurrentSecretKey".getBytes());
 
     public String generateToken(String email) {
