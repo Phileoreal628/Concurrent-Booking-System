@@ -2,7 +2,9 @@ package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
@@ -10,6 +12,8 @@ import java.util.UUID;
 @Table(name = "show")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Show {
 
     @Id
@@ -21,4 +25,15 @@ public class Show {
 
     @Column(nullable = false)
     private String endTime;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "movie_id", nullable = false)
+    private Movie movie;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "hall_id" , nullable = false)
+    private CinemaHall cinemaHall;
+
+    @Column(nullable = false)
+    private double pricePerSeat;
 }

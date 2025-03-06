@@ -1,11 +1,15 @@
 package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "seat")
+@Getter
+@Setter
 public class Seat {
 
     @Id
@@ -21,4 +25,7 @@ public class Seat {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hallId", nullable = false)
     private CinemaHall cinemaHall;
+
+    @Column(nullable = false)
+    private double price;
 }

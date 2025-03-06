@@ -10,7 +10,6 @@ import java.util.UUID;
 @Table(name = "bookingSeat")
 @RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 public class BookingSeat {

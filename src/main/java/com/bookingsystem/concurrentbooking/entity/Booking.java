@@ -1,24 +1,21 @@
 package com.bookingsystem.concurrentbooking.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "Booking_Movie")
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class Booking {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID bookingId;
 
     @ManyToOne(fetch = FetchType.EAGER)
